@@ -54,18 +54,20 @@ export default {
     },
     onWebConsoleReady: function(hostProxy) {
       this.hostProxy = hostProxy;
+      this.updateTime()
+      console.log('onWebConsoleReady')
     },
     onWebConsoleShow: function(hostProxy) {
-      console.log("web-console show");
+      console.log("onWebConsoleShow");
     },
     onWebConsoleHide: function(hostProxy) {
-      console.log("web-console hide");
+      console.log("onWebConsoleHide");
     },
     onWebConsoleTabChanged: function(hostProxy, newVal, oldVal) {
-      console.log("web-console tab changed: %s -> %s", oldVal, newVal);
+      console.log("onWebConsoleTabChanged: %s -> %s", oldVal, newVal);
     },
     onWebConsoleSettingsChanged: function(hostProxy, settings) {
-      console.log("web-console settings changed: %o", settings);
+      console.log("onWebConsoleSettingsChanged: %o", settings);
       this.showYear = settings.showYear
       this.updateTime()
     }
