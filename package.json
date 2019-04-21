@@ -1,12 +1,13 @@
 {
   "name": "web-console-plugin-time",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "clean": "del 'dist/*'",
     "serve": "parcel --no-autoinstall test/demo.html",
-    "build": "npm run clean && parcel build src/index.js"
+    "build": "npm run clean && parcel build src/TimePlugin.js",
+    "depoly": "npm run build && cross-env NPM_TOKEN=$NPM_TOKEN semantic-release"
   },
   "keywords": [],
   "author": "",
@@ -14,13 +15,27 @@
   "devDependencies": {
     "@babel/core": "^7.4.3",
     "@vue/component-compiler-utils": "^2.6.0",
+    "cross-env": "^5.2.0",
     "del-cli": "^1.1.0",
     "parcel-bundler": "^1.12.3",
+    "semantic-release": "^15.13.3",
     "vue": "^2.6.10",
     "vue-hot-reload-api": "^2.3.3",
     "vue-template-compiler": "^2.6.10"
   },
   "peerDependencies": {
-    "@whinc/web-console": "^0.6.2"
+    "@whinc/web-console": ">0.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/whinc/web-console-plugin.git"
+  },
+  "release": {
+    "ci": false,
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/npm"
+    ]
   }
 }

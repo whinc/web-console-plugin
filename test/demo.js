@@ -1,8 +1,10 @@
 import WebConsole from '@whinc/web-console'
-import myPlugin from '../src/index'
+import TimePlugin from '../src/TimePlugin'
+
+const id = 'Time'
+WebConsole.use(TimePlugin, {id: id})
 
 new WebConsole({
-  activeTab: myPlugin.id,
-  panelVisible: true,
-  plugins: [myPlugin]
+  activeTab: id,
+  panelVisible: true
 })
