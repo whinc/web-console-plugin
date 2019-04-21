@@ -1,14 +1,3 @@
-import TimePlugin from './TimePlugin.vue'
+import TimePlugin from './TimePlugin'
 
-export default {
-  name: 'Time',
-  component: TimePlugin,
-  settings: [
-    {
-      type: "checkbox",
-      name: "showYear",
-      value: false,
-      desc: "Show year-month-day"
-    }
-  ]
-}
+export default TimePlugin

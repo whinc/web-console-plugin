@@ -66,6 +66,11 @@ export default {
     onWebConsoleTabChanged: function(hostProxy, newVal, oldVal) {
       console.log("onWebConsoleTabChanged: %s -> %s", oldVal, newVal);
     },
+    onWebConsoleSettingsLoaded: function(hostProxy, settings) {
+      console.log("onWebConsoleSettingsLoaded: %o", settings);
+      this.showYear = settings.showYear
+      this.updateTime()
+    },
     onWebConsoleSettingsChanged: function(hostProxy, settings) {
       console.log("onWebConsoleSettingsChanged: %o", settings);
       this.showYear = settings.showYear

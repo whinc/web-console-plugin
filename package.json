@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "clean": "del 'dist/*'",
-    "dev": "parcel test/demo.html",
+    "serve": "parcel --no-autoinstall test/demo.html",
     "build": "npm run clean && parcel build src/index.js"
   },
   "keywords": [],
@@ -16,10 +16,11 @@
     "@vue/component-compiler-utils": "^2.6.0",
     "del-cli": "^1.1.0",
     "parcel-bundler": "^1.12.3",
-    "vue-template-compiler": "^2.6.10",
-    "vue-hot-reload-api": "^2.3.3"
+    "vue": "^2.6.10",
+    "vue-hot-reload-api": "^2.3.3",
+    "vue-template-compiler": "^2.6.10"
   },
   "peerDependencies": {
-    "vue": "^2.6.10"
+    "@whinc/web-console": "^0.6.2"
   }
 }
